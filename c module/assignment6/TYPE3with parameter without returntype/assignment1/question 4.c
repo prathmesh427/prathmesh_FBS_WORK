@@ -5,7 +5,7 @@
  {
  	char ch;                              //
  	printf("enter a charater: ");
- 	scanf("%d",&ch);
+ 	scanf("%c",&ch);
 	 checkcharacter(ch);                 // only value of variable 
  }
 void  checkcharacter(char ch)           // variable with datatype
@@ -22,4 +22,5 @@ void  checkcharacter(char ch)           // variable with datatype
 	}
  
  }
+
  
