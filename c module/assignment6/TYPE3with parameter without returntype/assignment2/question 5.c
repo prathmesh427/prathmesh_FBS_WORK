@@ -3,7 +3,7 @@
 //discount is 10%.But if he is not a student then if he has purchased more than 600 
 //discount is 15% otherwise there is not discount.
 #include <stdio.h>
- void checkdiscount(int,char);
+ void checkdiscount(int*,char*);
  void main()
  {
  	int price;
@@ -12,30 +12,33 @@
 	scanf("%d",&price);
 	printf("are you student (y,n): ");
 	scanf(" %c",&ch);
-	checkdiscount(price,ch);
+	checkdiscount(&price,&ch);
 	
  }
- void checkdiscount(int price,char ch)
+ void checkdiscount(int*price,char*ch)
  {
  	
- 	double tprice,isstudent;
- 	
- 	if (isstudent == 'y')
- 	{
- 		if (price>500)
- 		tprice=price-price*0.20;
- 		else
- 		tprice=price-price*0.10;
- 		
+ int discount,finalprice ;
+	
+	if(*ch=='y'){
+		if(*price>500){
+			discount=(*price*20)/100;
+		}
+		else{
+			discount=(*price*10)/100;
+		}
 	}
 	else
-	{
-		if (price>600)
-		tprice=price-price*0.15;
+	if(*ch=='n'){
+		if(*price>600){
+			discount=(*price*15)/100;
+		}
 		else
-		tprice= price;
-		
+		printf("other wise no discount");
 	}
-	printf("the final price for customer is %lf",tprice);
+	
+    finalprice= *price-discount;
+    printf("discount %d :",discount);
+    printf(" finalprice : %d ",finalprice);
  }
  
