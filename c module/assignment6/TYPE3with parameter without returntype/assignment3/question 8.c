@@ -1,7 +1,7 @@
 //Check the given number is Strong number or not. 
 //Input: n = 145  Output: Strong 
 #include <stdio.h>
- void checkstrong();
+ void checkstrong(int,int,int,int,int,int);
  void main()
  {
  	int num;
@@ -34,4 +34,5 @@
 	  printf("not strong number");
 	}
  }
+
  
